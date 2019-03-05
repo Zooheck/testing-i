@@ -23,4 +23,15 @@ describe('Fail method', () => {
 
       expect(actual.durability).toBe(3)
     })
+
+    it('durability decreases by 10 if enhancement is greater than 14', () => {
+      const item = {
+        enhancement: 19,
+        durability: 36
+      }
+
+      const actual = enhancer.failure(item);
+
+      expect(actual.durability).toBe(26)
+    })
 })
