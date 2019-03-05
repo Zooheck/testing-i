@@ -5,3 +5,22 @@ describe('Repair method', () => {
       expect(enhancer.repair({ durability: 3 }).durability).toEqual(100)
   })
 })
+
+describe('Success method', () => {
+  
+})
+
+
+describe('Fail method', () => {
+
+    it('durability decreases by 5 if enhancement is between 0 and 14', () => {
+      const item = {
+        enhancement: 3,
+        durability: 8
+      }
+
+      const actual = enhancer.failure(item);
+
+      expect(actual.durability).toBe(3)
+    })
+})
